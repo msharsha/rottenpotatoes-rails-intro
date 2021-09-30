@@ -6,9 +6,11 @@
 <table class="table table-striped col-md-12" id="movies">
   <thead>
     <tr>
-      <th>Movie Title</th>
+      <%# Sorting Movie Titles in ascending order based on condition and adding color to it %>
+      <th class="<%= @sort_items == 'movies_title' ? 'hilite bg-warning' : '' %>"><%= link_to 'Movies Title', movies_path(sort_items: "movies_title"), :id => 'title_header' %></th>
       <th>Rating</th>
-      <th>Release Date</th>
+      <%# Sorting Release Dates in ascending order based on condition and adding color to it %>
+      <th class="<%= @sort_items == 'release_date' ? 'hilite bg-warning' : '' %>"><%= link_to 'Release Date', movies_path(sort_items: "release_date"), :id => 'release_date_header' %></th>
       <th>More Info</th>
     </tr>
   </thead>
